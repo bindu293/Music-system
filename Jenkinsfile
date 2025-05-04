@@ -12,13 +12,12 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                dir('app') {
-                    bat 'npm install'
-                }
-            }
-        }
+       stage('Install Dependencies') {
+    steps {
+        bat 'npm install'
+    }
+}
+
 
         stage('Build Docker Images') {
             steps {
