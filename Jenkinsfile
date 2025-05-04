@@ -15,23 +15,23 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 dir('app') {
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
 
         stage('Build Docker Images') {
             steps {
-                sh 'docker-compose build'
+                bat 'docker-compose build'
             }
         }
 
         stage('Run Application') {
             steps {
                 // Force remove existing conflicting container (if any)
-                sh 'docker rm -f music-streamer || exit 0'
+                bat 'docker rm -f music-streamer || exit 0'
                 // Start containers
-                sh 'docker-compose up -d'
+                bat 'docker-compose up -d'
             }
         }
     }
