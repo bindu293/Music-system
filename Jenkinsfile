@@ -15,7 +15,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 dir('app') {
-                    bat 'npm install'
+                    bat 'C:\\Windows\\System32\\cmd.exe /c npm install'
                 }
             }
         }
