@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'windows'
+    }
 
     environment {
         DOCKER_BUILDKIT = 1
